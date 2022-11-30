@@ -5,16 +5,17 @@ Rails.application.routes.draw do
   # root "articles#index"
   resource :heroes, only: [:index, :show]
   resource :powers, only: [:index, :show, :update]
-  resource :hero_powers, only: [:index, :update]
+  resource :hero_powers, only: [:index, :create]
 
-  get '/heroes', to: 'heroes#index'
-  get '/heroes/:id', to: 'heroes#show'
+  ### Custom routes to show what the resources has within each route
+  # get '/heroes', to: 'heroes#index'
+  # get '/heroes/:id', to: 'heroes#show'
 
-  get '/powers/:id', to: 'powers#show'
-  get '/powers', to: 'powers#index'
-  post '/powers/:id', to: 'powers#update'
+  # get '/powers/:id', to: 'powers#show'
+  # get '/powers', to: 'powers#index'
+  # post '/powers/:id', to: 'powers#update'
 
-  get '/hero_powers', to: 'hero_power#index'
-  post '/hero_powers', to: 'hero_power#update'
+  # get '/hero_powers', to: 'hero_power#index'
+  # post '/hero_powers', to: 'hero_power#create'
 
 end
